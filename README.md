@@ -1,5 +1,6 @@
 # EmoBeat · 基于人脸情绪识别的歌曲推荐系统
 
+> 在线演示：**https://ferry-0710.github.io/emobeat/**
 > 纯前端（HTML5 + CSS3 + JavaScript + Vue 3）实现。人脸检测、表情识别、音频情绪分析、推荐排序
 > **全部在浏览器本地完成**，不上传任何图像或音频。
 
