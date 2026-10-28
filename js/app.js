@@ -114,7 +114,9 @@
       this.emotionProbs = UNIFORM;
 
       await this.loadData();
-      this.doRecommend();
+      // 此处不再预先推荐: 还没有任何情绪结果时 probs 是均匀分布(各 1/7),
+      // 加权出的目标坐标 (V/A≈0.34/0.61) 没有实际含义, 会推出与情绪无关的曲子。
+      // 首个识别结果到达后 applySmoothed 会立即触发推荐, 期间界面显示空状态提示。
       this.loadModels();
       window.addEventListener('resize', this.redrawOverlay);
     },
@@ -417,6 +419,7 @@
       /* --------------------------------------------------------- 结果应用 */
       applySmoothed(sm) {
         const prev = this.cur.stable;
+        const hadEmotion = this.hasEmotion;
         this.cur = {
           stable: sm.stable,
           dominant: sm.dominant,
@@ -425,7 +428,10 @@
         };
         this.emotionProbs = Object.assign({}, sm.probs);
         this.hasEmotion = true;
-        if (prev !== sm.stable) this.scheduleRecommend(260);
+        // 除了"情绪标签翻转", 从"无结果"→"有结果"也必须重算推荐:
+        // 换图/重新识别后若标签恰好相同(例如连点两次同类演示图), 只比较 prev 会漏掉更新,
+        // 列表将一直停留在首屏那次基于均匀概率(各 1/7, 对应 V/A≈0.34/0.61)的推荐上。
+        if (prev !== sm.stable || !hadEmotion) this.scheduleRecommend(260);
       },
 
       scheduleRecommend(delay) {
