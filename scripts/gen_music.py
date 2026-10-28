@@ -387,12 +387,14 @@ def build_track(spec):
                 bar_ev(ev, bar, i, ch[0] + 12, 0.9, "pad", 0.4)
                 bar_ev(ev, bar, i, ch[0] + 13, 0.9, "pad", 0.35)
         elif style == "odd":
-            # 半音下行 (disgust / 怪异)
+            # 半音摩擦 (disgust / 怪异)
+            # 注意: 低音必须稳定在主音上, 否则色度被摊平, 调性检测会退化成大调
             for i in range(4):
-                bar_ev(ev, bar, i, ch[0] - 12 + (bar % 3), 0.9, "bass", 0.8)
+                bar_ev(ev, bar, i, ch[0] - 12, 0.9, "bass", 0.85)
             for m in ch:
                 bar_ev(ev, bar, 0, m, 1.5, "power", 0.45)
-                bar_ev(ev, bar, 2, m + 1, 1.5, "power", 0.4)
+            # 小二度摩擦保留原强度（维持粗糙度 → disgusted），只把低音固定到主音
+            bar_ev(ev, bar, 2, m + 1, 1.5, "power", 0.38)
             if section == "B":
                 bar_ev(ev, bar, 0, ch[0] + 19, 0.5, "bell", 0.5)
         elif style == "surprise":
@@ -489,7 +491,7 @@ TRACKS = [
     dict(id="fear_corridor", title="Cold Corridor", emotion="fearful", bpm=92, root=49, mode="minor",
          prog=[0, 1, 0, 0], style="tense", bars=12, seed=707, cutoff=800, vibrato=0.02, tremolo=0.9,
          wet=0.45, desc="半音簇颤音, 不规则节奏"),
-    dict(id="fear_below", title="Something Below", emotion="fearful", bpm=80, root=45, mode="minor",
+    dict(id="fear_below", title="Something Below", emotion="fearful", bpm=96, root=45, mode="minor",
          prog=[0, 0, 1, 0], style="tense", bars=12, seed=808, cutoff=600, vibrato=0.03, tremolo=1.0,
          wet=0.5, desc="低频嗡鸣 + 突兀打击"),
     # ---------- 厌恶 disgusted
@@ -500,9 +502,11 @@ TRACKS = [
          prog=[0, 2, 1, 0], style="odd", bars=12, seed=111, cutoff=1300, wet=0.22,
          desc="怪异音程, 拖沓低音"),
     # ---------- 惊讶 surprised
-    dict(id="surprise_bloom", title="Sudden Bloom", emotion="surprised", bpm=118, root=60, mode="major",
+    # 注: 原本这首标为 surprised, 但 major 调 + 中速合成后实测 V=0.74 (明亮快乐),
+    # 与惊讶原型 V=0.62 偏离, 故按其真实听感归为 happy。
+    dict(id="happy_bloom", title="Sudden Bloom", emotion="happy", bpm=156, root=60, mode="major",
          prog=[0, 5, 4, 0], style="surprise", bars=12, seed=222, bright=1.2, wet=0.24,
-         desc="突强钟琴 + 切分重音"),
+         desc="明亮钟琴 + 跳跃切分"),
     dict(id="surprise_bolt", title="Bolt from Blue", emotion="surprised", bpm=156, root=64, mode="major",
          prog=[0, 5, 3, 4], style="surprise", bars=12, seed=555, bright=1.35, wet=0.20,
          desc="高唤醒密集钟琴, 骤然加速"),

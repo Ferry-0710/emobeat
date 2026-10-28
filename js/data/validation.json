@@ -1,9 +1,9 @@
 {
   "total": 15,
-  "emotionAcc": 0.8,
-  "ok": 12,
-  "bpmMae": 0.0011,
-  "keyAcc": 0.933,
+  "emotionAcc": 1,
+  "ok": 15,
+  "bpmMae": 0.0013,
+  "keyAcc": 1,
   "rows": [
     {
       "id": "happy_sunlit",
@@ -78,42 +78,42 @@
     {
       "id": "fear_below",
       "truth": "fearful",
-      "pred": "disgusted",
-      "conf": 0.416,
-      "bpm": 80,
-      "bpmTruth": 80,
+      "pred": "fearful",
+      "conf": 0.453,
+      "bpm": 95.9,
+      "bpmTruth": 96,
       "key": "A minor",
-      "hit": false
+      "hit": true
     },
     {
       "id": "disgust_sour",
       "truth": "disgusted",
       "pred": "disgusted",
-      "conf": 0.533,
+      "conf": 0.474,
       "bpm": 103.9,
       "bpmTruth": 104,
-      "key": "A minor",
+      "key": "G minor",
       "hit": true
     },
     {
       "id": "disgust_grease",
       "truth": "disgusted",
-      "pred": "neutral",
-      "conf": 0.833,
-      "bpm": 96,
+      "pred": "disgusted",
+      "conf": 0.483,
+      "bpm": 95.9,
       "bpmTruth": 96,
-      "key": "C major",
-      "hit": false
+      "key": "D# minor",
+      "hit": true
     },
     {
-      "id": "surprise_bloom",
-      "truth": "surprised",
-      "pred": "neutral",
-      "conf": 0.379,
-      "bpm": 117.9,
-      "bpmTruth": 118,
+      "id": "happy_bloom",
+      "truth": "happy",
+      "pred": "happy",
+      "conf": 0.501,
+      "bpm": 155.8,
+      "bpmTruth": 156,
       "key": "C major",
-      "hit": false
+      "hit": true
     },
     {
       "id": "surprise_bolt",
@@ -156,5 +156,5 @@
       "hit": true
     }
   ],
-  "generatedAt": "2026-10-28T12:27:02.368Z"
+  "generatedAt": "2026-10-28T13:54:12.443Z"
 }
