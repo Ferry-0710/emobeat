@@ -579,8 +579,9 @@
           <div class="note" style="margin-top:10px">
             <b>结论：</b>情绪分类 {{ validation ? (validation.ok + '/' + validation.total) : '—' }}，
             节拍平均相对误差 {{ validation ? (validation.bpmMae*100).toFixed(1) : '—' }}%，调式识别
-            {{ validation ? (validation.keyAcc*100).toFixed(0) : '—' }}%。剩余的混淆主要发生在
-            恐惧 ↔ 厌恶（两者都是低效价 + 中低唤醒 + 高半音化），这也是音乐情绪计算领域的经典难点。
+            {{ validation ? (validation.keyAcc*100).toFixed(0) : '—' }}%。恐惧 ↔ 厌恶是音乐情绪计算里
+            最容易混淆的一对（两者都是低效价 + 中低唤醒 + 高半音化），本曲库靠"低频嗡鸣"与"失谐摩擦"
+            在粗糙度上的差异把两者分开；换成真实混音时，这两类仍会是最先出错的。
           </div>
         </div>
 
