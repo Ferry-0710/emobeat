@@ -1,0 +1,160 @@
+{
+  "total": 15,
+  "emotionAcc": 0.8,
+  "ok": 12,
+  "bpmMae": 0.0011,
+  "keyAcc": 0.933,
+  "rows": [
+    {
+      "id": "happy_sunlit",
+      "truth": "happy",
+      "pred": "happy",
+      "conf": 0.755,
+      "bpm": 126,
+      "bpmTruth": 126,
+      "key": "A major",
+      "hit": true
+    },
+    {
+      "id": "happy_bubblegum",
+      "truth": "happy",
+      "pred": "happy",
+      "conf": 0.841,
+      "bpm": 142.2,
+      "bpmTruth": 142,
+      "key": "D major",
+      "hit": true
+    },
+    {
+      "id": "sad_rain",
+      "truth": "sad",
+      "pred": "sad",
+      "conf": 0.621,
+      "bpm": 65.9,
+      "bpmTruth": 66,
+      "key": "A minor",
+      "hit": true
+    },
+    {
+      "id": "sad_platform",
+      "truth": "sad",
+      "pred": "sad",
+      "conf": 0.573,
+      "bpm": 57.9,
+      "bpmTruth": 58,
+      "key": "D minor",
+      "hit": true
+    },
+    {
+      "id": "angry_iron",
+      "truth": "angry",
+      "pred": "angry",
+      "conf": 0.627,
+      "bpm": 153.8,
+      "bpmTruth": 154,
+      "key": "E minor",
+      "hit": true
+    },
+    {
+      "id": "angry_redline",
+      "truth": "angry",
+      "pred": "angry",
+      "conf": 0.733,
+      "bpm": 170.3,
+      "bpmTruth": 170,
+      "key": "F minor",
+      "hit": true
+    },
+    {
+      "id": "fear_corridor",
+      "truth": "fearful",
+      "pred": "fearful",
+      "conf": 0.527,
+      "bpm": 92,
+      "bpmTruth": 92,
+      "key": "C# minor",
+      "hit": true
+    },
+    {
+      "id": "fear_below",
+      "truth": "fearful",
+      "pred": "disgusted",
+      "conf": 0.416,
+      "bpm": 80,
+      "bpmTruth": 80,
+      "key": "A minor",
+      "hit": false
+    },
+    {
+      "id": "disgust_sour",
+      "truth": "disgusted",
+      "pred": "disgusted",
+      "conf": 0.533,
+      "bpm": 103.9,
+      "bpmTruth": 104,
+      "key": "A minor",
+      "hit": true
+    },
+    {
+      "id": "disgust_grease",
+      "truth": "disgusted",
+      "pred": "neutral",
+      "conf": 0.833,
+      "bpm": 96,
+      "bpmTruth": 96,
+      "key": "C major",
+      "hit": false
+    },
+    {
+      "id": "surprise_bloom",
+      "truth": "surprised",
+      "pred": "neutral",
+      "conf": 0.379,
+      "bpm": 117.9,
+      "bpmTruth": 118,
+      "key": "C major",
+      "hit": false
+    },
+    {
+      "id": "surprise_bolt",
+      "truth": "surprised",
+      "pred": "surprised",
+      "conf": 0.581,
+      "bpm": 155.8,
+      "bpmTruth": 156,
+      "key": "A major",
+      "hit": true
+    },
+    {
+      "id": "surprise_halo",
+      "truth": "surprised",
+      "pred": "surprised",
+      "conf": 0.494,
+      "bpm": 168.6,
+      "bpmTruth": 168,
+      "key": "A major",
+      "hit": true
+    },
+    {
+      "id": "neutral_lantern",
+      "truth": "neutral",
+      "pred": "neutral",
+      "conf": 0.479,
+      "bpm": 99.9,
+      "bpmTruth": 100,
+      "key": "C major",
+      "hit": true
+    },
+    {
+      "id": "neutral_still",
+      "truth": "neutral",
+      "pred": "neutral",
+      "conf": 0.924,
+      "bpm": 75.9,
+      "bpmTruth": 76,
+      "key": "F major",
+      "hit": true
+    }
+  ],
+  "generatedAt": "2026-10-28T12:27:02.368Z"
+}
